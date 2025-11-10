@@ -1,0 +1,34 @@
+# ----------------------------------------
+# PostgreSQL (Dev Instance)
+# ----------------------------------------
+services:
+  postgres:
+    image: postgres:15
+    container_name: auth_flow_db
+    restart: unless-stopped
+
+    env_file:
+      - .env.local
+
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: auth_flow
+
+    ports:
+      - "5434:5432"
+
+    volumes:
+      - authflow_pgdata:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      retries: 5
+      start_period: 5s
+
+# ----------------------------------------
+# Persistent volume
+# ----------------------------------------
+volumes:
+  authflow_pgdata:

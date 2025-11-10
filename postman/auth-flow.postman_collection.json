@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "Auth Flow API",
+    "_postman_id": "auth-flow-collection",
+    "description": "Postman Collection for testing Auth Flow project (JWT + Session). Uses {{base_url}} placeholder for environment flexibility.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register (API)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"strongpassword\",\n  \"name\": \"John Doe\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/auth/register", "protocol": "http", "host": ["{{base_url}}"], "path": ["api","auth","register"] }
+      }
+    },
+    {
+      "name": "Login (API)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"strongpassword\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/auth/login", "protocol": "http", "host": ["{{base_url}}"], "path": ["api","auth","login"] }
+      }
+    },
+    {
+      "name": "Profile (API)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": { "raw": "{{base_url}}/api/auth/profile", "protocol": "http", "host": ["{{base_url}}"], "path": ["api","auth","profile"] }
+      }
+    },
+    {
+      "name": "Refresh Token (API)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{base_url}}/api/auth/refresh", "protocol": "http", "host": ["{{base_url}}"], "path": ["api","auth","refresh"] }
+      }
+    },
+    {
+      "name": "Logout (API)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{base_url}}/api/auth/logout", "protocol": "http", "host": ["{{base_url}}"], "path": ["api","auth","logout"] }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": { "raw": "{{base_url}}/users", "protocol": "http", "host": ["{{base_url}}"], "path": ["users"] }
+      }
+    },
+    {
+      "name": "Delete User by Email",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": { "raw": "{{base_url}}/users/user@example.com", "protocol": "http", "host": ["{{base_url}}"], "path": ["users","user@example.com"] }
+      }
+    },
+    {
+      "name": "Register (Web / Session)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"strongpassword\",\n  \"username\": \"JohnDoe\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/auth/register", "protocol": "http", "host": ["{{base_url}}"], "path": ["auth","register"] }
+      }
+    },
+    {
+      "name": "Login (Web / Session)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"strongpassword\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/auth/login", "protocol": "http", "host": ["{{base_url}}"], "path": ["auth","login"] }
+      }
+    },
+    {
+      "name": "Profile (Web / Session)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{base_url}}/auth/profile", "protocol": "http", "host": ["{{base_url}}"], "path": ["auth","profile"] }
+      }
+    },
+    {
+      "name": "Logout (Web / Session)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{base_url}}/auth/logout", "protocol": "http", "host": ["{{base_url}}"], "path": ["auth","logout"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "access_token", "value": "", "type": "string" }
+  ]
+}
