@@ -1,0 +1,11 @@
+<svg width="600" height="150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="150" rx="15" ry="15" fill="#0f172a"/>
+  <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle"
+        font-family="JetBrains Mono, monospace" font-size="32" fill="#38bdf8">
+    🔐 AuthFlow
+  </text>
+  <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Inter, sans-serif" font-size="16" fill="#94a3b8">
+    Hybrid Authentication Boilerplate
+  </text>
+</svg>
