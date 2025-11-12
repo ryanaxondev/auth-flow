@@ -150,7 +150,7 @@ npm run db:studio
 
 Detailed diagrams for both session-based and JWT-based authentication:
 
-🔊 [View Auth Flows →](./docs/auth-flows.md)
+🔊 [View Auth Flows](./docs/auth-flows.md)
 
 ---
 
