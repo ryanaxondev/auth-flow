@@ -1,15 +1,14 @@
-```markdown
 # 🔐 Auth Flows
 
-This document explains how authentication works in the **AuthFlow Project**,  
+This document explains how authentication works in the **AuthFlow Project**,
 which supports both **Session-based (Web)** and **JWT-based (API)** authentication systems.
 
 ---
 
 ## 🧩 Overview
 
-The system is designed as a **hybrid authentication guard** that automatically detects  
-whether the request comes from a traditional web route (session-based)  
+The system is designed as a **hybrid authentication guard** that automatically detects
+whether the request comes from a traditional web route (session-based)
 or an API route (token-based).
 
 The middleware responsible for this behavior is [`authGuard.ts`](../src/middleware/authGuard.ts).
@@ -29,7 +28,7 @@ flowchart TD
     A -->|missing session| L
     A --> X[Logout Endpoint]
     X --> O[Logged Out]
-````
+```
 
 ### 🔍 Description
 
@@ -107,5 +106,3 @@ if (req.session?.user) {
 ✅ **In short:**
 Your project smartly blends both worlds — sessions for browsers, tokens for APIs —
 making it flexible, secure, and production-ready.
-
-```

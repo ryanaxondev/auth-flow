@@ -156,9 +156,10 @@ Detailed diagrams for both session-based and JWT-based authentication:
 
 ## 🗂️ API Testing
 
-A ready-to-use **Postman collection** is included in the `/postman` folder.
+You can test the API in two ways:
 
-To test manually via `curl`, see [API Test Guide](./postman/README.md).
+1. 🧪 **Using Postman** — a ready-to-use collection is available in `/postman`.
+2. 🧠 **Manually with cURL** — see [API Test Guide](./postman/README.md) for examples.
 
 ---
 
