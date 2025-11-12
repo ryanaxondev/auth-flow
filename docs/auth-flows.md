@@ -5,7 +5,7 @@ which supports both **Session-based (Web)** and **JWT-based (API)** authenticati
 
 ---
 
-## 🧩 Overview
+## 🤩 Overview
 
 The system is designed as a **hybrid authentication guard** that automatically detects
 whether the request comes from a traditional web route (session-based)
@@ -21,13 +21,13 @@ This flow is used for **HTML routes** — typically for browser-based login and 
 
 ```mermaid
 flowchart TD
-    L[Login Page] --> G[AuthGuard (Server)]
-    G --> S[Create Session + HttpOnly Cookie]
-    S --> A[Authenticated User]
-    A -->|valid session| P[Protected HTML Routes]
-    A -->|missing session| L
-    A --> X[Logout Endpoint]
-    X --> O[Logged Out]
+  L[Login Page] --> G[AuthGuard Server]
+  G --> S[Create Session \+ HttpOnly Cookie]
+  S --> A[Authenticated User]
+  A -->|valid session| P[Protected HTML Routes]
+  A -->|missing session| L
+  A --> X[Logout Endpoint]
+  X --> O[Logged Out]
 ```
 
 ### 🔍 Description
@@ -91,7 +91,7 @@ if (req.session?.user) {
 
 ---
 
-## 🧾 Summary
+## 🦾 Summary
 
 | Feature   | Session-based                         | JWT-based                      |
 | --------- | ------------------------------------- | ------------------------------ |
